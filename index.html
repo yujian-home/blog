@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Space | 个人博客</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --accent-color: #7c3aed;
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 炫酷背景光晕 */
+        .blob {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 导航栏 */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: -1px;
+            font-size: 1.5rem;
+            background: linear-gradient(to right, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero 区域 */
+        header {
+            padding: 100px 0;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 500px;
+        }
+
+        /* 文章列表 */
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .post-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .post-date {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 0.5rem;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            header { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blob"></div>
+
+    <div class="container">
+        <nav>
+            <div class="logo">CREATIVE.</div>
+            <div style="color: var(--text-dim); font-size: 0.9rem;">2026 Portfolio</div>
+        </nav>
+
+        <header>
+            <p style="color: var(--accent-color); margin-bottom: 1rem;">Hello, World.</p>
+            <h1>我创造<br>数字世界的美学。</h1>
+            <p class="subtitle">专注于前端开发、交互设计与极简主义生活方式。在这里记录我的技术探索与思考。</p>
+        </header>
+
+        <main>
+            <h2 class="section-title">最新文章</h2>
+            
+            <div class="post-card">
+                <div class="post-date">2026年1月5日</div>
+                <h3 class="post-title">为何极简主义能提升代码质量？</h3>
+                <p style="color: var(--text-dim);">探讨在复杂的架构中，如何通过删减来实现更高效的维护...</p>
+            </div>
+
+            <div class="post-card">
+                <div class="post-date">2025年12月28日</div>
+                <h3 class="post-title">2026年 CSS 新特性指南</h3>
+                <p style="color: var(--text-dim);">从 Container Queries 到原生级联层，CSS 正在变得前所未有的强大。</p>
+            </div>
+
+            <div class="post-card">
+                <div class="post-date">2025年11月15日</div>
+                <h3 class="post-title">如何构建一个会呼吸的 UI</h3>
+                <p style="color: var(--text-dim);">动画不应是装饰，而应是交互的延伸。</p>
+            </div>
+        </main>
+
+        <footer style="padding: 100px 0 50px; text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+            设计与编码 By Gemini · © 2026
+        </footer>
+    </div>
+
+</body>
+</html>
